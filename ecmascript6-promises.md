@@ -1,17 +1,17 @@
 ---
 layout: module
 ---
-# 9. Using Promises
+# 9. Χρησιμοποιώντας Promises
 
-Promises have replaced callback functions as the preferred programming style for handling asynchronous calls. A promise is a holder for a result (or an error) that will become available in the future (when the async call returns). Promises have been available in JavaScript through third-party libraries (for example, [jQuery](https://api.jquery.com/promise/) and [q](https://github.com/kriskowal/q)). ECMAScript 6 adds built-in support for promises to JavaScript. 
+Τα promises έχουν αντικαταστήσει τις συναρτήσεις callback όσο αφορά το προτεινόμενο στυλ προγραμματισμού για το χειρισμό ασύγχρονων κλήσεων. Ένα promise κρατά ένα αποτέλεσμα (ή ένα σφάλμα) το οποίο θα γίνει διαθέσιμο στο μέλλον (όταν η ασύγχρονη κλήση επιστρέψει). Τα promises ήταν διαθέσιμα στην JavaScript μέσω τρίων βιβλιοθηκών (για παράδειγμα [jQuery](https://api.jquery.com/promise/) και [q](https://github.com/kriskowal/q)). Η ECMAScript 6 προσθέτει built-in υποστήριξη για promises στη JavaScript. 
  
-In this unit, you create a simple application called ratefinder that returns a list of available mortgage rates. 
+Σε αυτή την ενότητα δημιουργείς μία απλή εφαρμογή που ονομάζεται ratefinder η οποία επιστρέφει μία λίστα με διαθέσιμες προσφορές στεγαστικών δανείων. 
 
-## Part 1: Use a Promise
+## Μέρος 1: Χρησιμοποίησε ένα Promise
 
-To illustrate the use of promises in this example, you use the new ```fetch()``` function. At the time of this writing, ```fetch()``` is available in the latest version of Chrome, Firefox, and Opera, but not in IE and Safari. You can check the current availability of `fetch()` [here](http://caniuse.com/#feat=fetch). You can read more about `fetch()` [here](http://jakearchibald.com/2015/thats-so-fetch/).
+Για να δείξουμε τη χρήση promises σε αυτό το παράδειγμα, θα χρησιμοποιήσουμε την νέα συνάρτηση ```fetch()```. Αυτή τη στιγμή η ```fetch()``` είναι διαθέσιμη στην τελευταία έκδοση των Chrome, Firefox, και Opera, αλλά όχι στους IE και Safari. Μπορείς να δεις τη διαθεσιμότητα της `fetch()` [εδώ](http://caniuse.com/#feat=fetch). Μπορείς να διαβάσεις περισσότερα για την `fetch()` [εδώ](http://jakearchibald.com/2015/thats-so-fetch/).
 
-1. Create a file named `ratefinder.html` in the `es6-tutorial` directory. implemented the file as follows:
+1. Φτιάξε ένα αρχείο με το όνομα `ratefinder.html` στο φάκελο `es6-tutorial`. Γράψε τον παρακάτω κώδικα στο αρχείο:
 
     ```
     <!DOCTYPE html>
@@ -26,7 +26,7 @@ To illustrate the use of promises in this example, you use the new ```fetch()```
     </html>
     ```
  
-1. Create a file named `ratefinder.js` in the `es6-tutorial/js` directory. implemented the file as follows:
+1. Δημιούργησε ένα αρχείο `ratefinder.js` στο φάκελο `es6-tutorial/js`. Γράψε τον παρακάτω κώδικα στο αρχείο:
 
     ```
     let url = "rates.json";
@@ -41,9 +41,9 @@ To illustrate the use of promises in this example, you use the new ```fetch()```
         .catch(e => console.log(e));
     ```
     
-    > To keep things simple, this code uses a static data file: rates.json. The application would work the same way with a URL pointing to a remote service.
+    > Για να απλοποιήσουμε τα πράγματα, αυτός ο κώδικας χρησιμοποιεί ένα στατικό αρχείο δεδομένων: rates.json. Η εφαρμογή θα δούλευε και με κάποιο URL που να δείχνει σε κάποια απομακρυσμένη υπηρεσία.
 
-1. Open `webpack.config.js` in your code editor. In `module.exports`, modify the entry and output items as follows:         
+1. Άνοιξε το `webpack.config.js` στον editor σου. Στο `module.exports` άλλαξε τα στοιχεία των κλειδιών entry και output ως εξής:         
 
     ```
     entry: {
@@ -56,24 +56,24 @@ To illustrate the use of promises in this example, you use the new ```fetch()```
     },
     ```                
 
-    > The **webpack** script will now compile two applications: **main.js** and **ratefinder.js**. It will create two compiled files based on the entry name: **app.bundle.js** and **ratefinder.bundle.js**.         
+    > Το script **webpack** τώρα θα κάνει compile δύο εφαρμογές: την **main.js** και την **ratefinder.js**. Θα δημιουργήσει δύο compiled αρχεία με βάση το όνομα entry: **app.bundle.js** και **ratefinder.bundle.js**.         
             
-1. On the command line, type the following command to rebuild the application:
+1. Στη γραμμή εντολών γράψε την παρακάτω εντολή για να ξανακάνεις build την εφαρμογή:
 
 	```
     npm run webpack
 	```
 
-1. Open a browser, access [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
+1. Άνοιξε ένα browser και μπες στο [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
           
 
-## Part 2: Create a Promise
+## Part 2: Δημιουργώντας ένα Promise
 
-Most of the time, all you'll have to do is use promises returned by built-in or third-party APIs. Sometimes, you may have to create your own promises as well. In this section you create a mock data service to familiarize yourself with the process of creating ECMAScript 6 promises. The mock data service uses an asynchronous API so that it can replace an actual asynchronous data service for test or other purpose.
+Συνήθως αυτό που έχεις να κάνεις είναι να χρησιμοποιείς promises που επιστρέφονται από built-in ή τρίτα API. Συχνά χρειάζεται επίσης να δημιουργήσεις τα δικά σου promises. Σε αυτή την ενότητα δημιουργείς ένα mock data service για να εξοικιωθείς με τη διαδικασία δημιουργίας promises της ECMAScript 6. Το mock data service χρησιμοποιεί ένα ασύγχρονο API ώστε να αντικαταστήσει μία πραγματικά ασύγχρονη υπηρεσία δεδομένων για δοκιμές ή άλλους σκοπούς.
 
-1. Create a new file named `rate-service-mock.js` in the `js` directory. 
+1. Δημιούργησε ένα νέο αρχείο με το όνομα `rate-service-mock.js` στο φάκελο `js`. 
 
-1. In rate-service-mock.js.js, define a ```rates``` variable with some sample data:
+1. Στο rate-service-mock.js, όρισε μία μεταβλητή ```rates``` με κάποια παραδείγματα δεδομένων:
  
     ```
     let rates = [
@@ -90,7 +90,7 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
     ];
     ```
  
-1. Define a ```findAll()``` function implemented as follows:
+1. Όρισε μία συνάρτηση ```findAll()``` ως εξής:
 
     ```
     export let findAll = () => new Promise((resolve, reject) => {
@@ -102,7 +102,7 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
     });
     ```
     
-1. Open `ratefinder.js`. Change the implementation as follows:
+1. Άνοιξε το `ratefinder.js`. Άλλαξε την υλοποίηση ως εξής:
 
     ```
     import * as service from './rate-service-mock';
@@ -116,16 +116,16 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
         .catch(e => console.log(e));
     ```
     
-1. On the command line, type the following command to rebuild the application:
+1. Στη γραμμή εντολών γράψε την ακόλουθη εντολή για να ξανακάνεις build την εφαρμογή σου:
 
 	```
     npm run webpack
 	```
 
-1. Open a browser, access [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
+1. Άνοιξε ένα browser και μπες στο [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
     
 
-## Additional Resources
+## Επιπλέον βιβλιογραφία
 
 - [MDN: Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [2ality: Promises](http://www.2ality.com/2014/09/es6-promises-foundations.html)
@@ -133,7 +133,7 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript6-classes.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="next.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-classes.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Προηγούμενο</a>
+<a href="next.html" class="btn btn-default pull-right">Επόμενο <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
