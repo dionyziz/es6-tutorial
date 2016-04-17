@@ -1,15 +1,15 @@
 ---
 layout: module
 ---
-# 5. Using Template Strings
+# 5. Χρησιμοποιώντας Template Strings
 
-In ECMAScript 6, template strings are single or multi-line string literals defined using the \` (back-tick) character and allowing embedded expressions defined inside ```${ }```. 
+Στην ECMAScript 6, τα template strings είναι μονής ή πολλαπλών γραμμών αλφαριθμητικά τα οποία ορίζονται χρησιμοποιώντας τον χαρακτήρα \` (back-tick). Επιτρέπουν επίσης embedded expressions: ```${ }```
 
-In this unit, you use a template string to display the amortization table.
+Σε αυτή την ενότητα, θα χρησιμοποιήσουμε template strings για να φτιάξουμε τον πίνακα με τα στοιχεία της αποπληρωμής του δανείου.
 
-## Steps
+## Βήματα
 	 
-1. In `index.html`, add the following HTML fragment after the ```<h3>``` block (monthly rate):
+1. Στο `index.html`, πρόσθεσε τον ακόλουθο HTML κώδικα κάτω από το ```<h3>``` (monthly rate):
  
     ```
     <table>
@@ -26,7 +26,7 @@ In this unit, you use a template string to display the amortization table.
     </table>
     ```
  
-1. In `main.js`, add the following code at the end of the **calcBtn** click event handler:  	 
+1. Στο `main.js`, πρόσθεσε τον ακόλουθο κώδικα στο τέλος του click event handler για το **calcBtn**:  	 
 
     ```
 	let html = "";
@@ -51,18 +51,18 @@ In this unit, you use a template string to display the amortization table.
 	document.getElementById("amortization").innerHTML = html;
 	```
 	
-1. On the command line, type the following command to rebuild the application:
+1. Τρέξε την ακόλουθη εντολή στο command line για να ξανακάνεις build την εφαρμογή:
     
     ```
     npm run babel
     ```
 
-1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
+1. Από τον browser μπες στο [http://localhost:8080](http://localhost:8080), και κάνε click στο κουμπί **Calculate**.
 
     ![](images/amortization-table.jpg)
 
 
-## Additional Resources:
+## Επιπλέον Βιβλιογραφία:
 
 - [MDN: Template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings)
 - [2ality: HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
@@ -70,8 +70,8 @@ In this unit, you use a template string to display the amortization table.
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript6-arrow-functions.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript6-setup-webpack.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-arrow-functions.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Προηγούμενο</a>
+<a href="ecmascript6-setup-webpack.html" class="btn btn-default pull-right">Επόμενο <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
 
