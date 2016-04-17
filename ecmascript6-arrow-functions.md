@@ -78,7 +78,7 @@ layout: module
     npm run babel
     ```
 
-1. Από τον browser, μπες στο  [http://localhost:8080](http://localhost:8080), και κάνε click στο κουμπί **Calculate**. Άνοιθξε το developer console: θα πρέπει εκεί να δεις τυπωμένες τις τιμές της αποπληρωμής.
+1. Από τον browser, μπες στο  [http://localhost:8080](http://localhost:8080), και κάνε click στο κουμπί **Calculate**. Άνοιξε το developer console: θα πρέπει εκεί να δεις τυπωμένες τις τιμές της αποπληρωμής.
 
     ![](images/amortization-in-console.jpg)
 

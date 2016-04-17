@@ -20,9 +20,9 @@ layout: default
 Επιπλέον, ακολούθησέ μας στο Twitter για περισσότερες ενημερώσεις και άλλα workshops:
 
 <a class="twitter twitter-follow-button"
-   href="https://twitter.com/dionyziz"
+   href="https://twitter.com/themicp"
    data-size="large">
-    Ακολούθησε τον @dionyziz</a>
+    Ακολούθησε τον @themicp</a>
 
 <a class="twitter twitter-follow-button"
    href="https://twitter.com/dionyziz"
