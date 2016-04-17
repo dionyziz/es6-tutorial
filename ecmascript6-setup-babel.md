@@ -112,7 +112,7 @@ layout: module
 1. Άνοιξε το `build/main.bundle.js` στον editor σου και παρατήρησε ότι ο κώδικας που παράχθηκε από το Bable είναι σχεδόν ίδιος με τον αρχικό κώδικα (`js/main.js`). Αυτό συνέβη επειδή ο κώδικας στο main.js δεν έχει ακόμα κάποιο ECMAScript 6 feature. Τώρα που έχουμε ρυθμίσει το περιβάλλον, μπορούμε να ξεκινήσουμε να γράφουμε ECMAScript 6 στην επόμενη ενότητα.
 
 
-## Βιβλιογραφία
+## Επιπλέον Βιβλιογραφία
 
 - [Babel](http://babeljs.io/) 
 - [ES6 compatibility table](https://kangax.github.io/compat-table/es6/)

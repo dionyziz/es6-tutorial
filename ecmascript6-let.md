@@ -69,7 +69,7 @@ layout: module
 	> Αν βλέπεις ακόμα τα errors, σιγουρέψου ότι έχεις καθαρίσει την cache του browser και κάνε refresh.
 
 
-## Βιβλιογραφία
+## Επιπλέον Βιβλιογραφία
 
 - [MDN let variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
